@@ -1,36 +1,7 @@
 <div class="container-fluid">
-  <div class="row p-2">
-    <div class="col-md-6">
-      <h5>Instructors:</h5>
-      <hr>
-      <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-        <!-- Position Column -->
-        <ng-container matColumnDef="id">
-          <mat-header-cell *matHeaderCellDef> id </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
-        </ng-container>
-
-        <!-- Name Column -->
-        <ng-container matColumnDef="Name">
-          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-        </ng-container>
-
-        <!-- Weight Column -->
-        <ng-container matColumnDef="Surname">
-          <mat-header-cell *matHeaderCellDef> Surname </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.surname}} </mat-cell>
-        </ng-container>
-
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="Classes">
-          <mat-header-cell *matHeaderCellDef> Classes </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.classes}} </mat-cell>
-        </ng-container>
-
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-      </mat-table>
+    <div class="row">
+        <div class="col-md-6">
+            <app-data-table></app-data-table>
+        </div>
     </div>
-  </div>
 </div>
