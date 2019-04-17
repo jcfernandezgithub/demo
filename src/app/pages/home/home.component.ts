@@ -1,26 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Instructor } from '../../models/Instructor';
+import { AngularFireDatabase } from 'angularfire2/database';
 
-const ELEMENT_DATA: Instructor[] = [
-  {
-    "id": 1,
-    "name": "Instructor",
-    "surname": "#1",
-    "classes": ["kpop", "hip-hop"]
-  },
-  {
-    "id": 2,
-    "name": "Instructor",
-    "surname": "#1",
-    "classes": ["kpop", "hip-hop"]
-  },
-  {
-    "id": 3,
-    "name": "random",
-    "surname": "#5",
-    "classes": ["kpop", "hip-hop"]
-  }
-];
 
 @Component({
   selector: 'app-home',
@@ -28,9 +8,19 @@ const ELEMENT_DATA: Instructor[] = [
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(){
+  
+  books: any[];
 
+  constructor(private db: AngularFireDatabase) { }
+
+  ngOnInit() {
   }
-  ngOnInit(){
+
+  getBooks() {
+    return this.db.list('/books').valueChanges().subscribe(data => {
+      console.log(data);
+      this.books = data;
+    });
   }
+
 }

@@ -3,7 +3,8 @@
   <mat-sidenav #drawer class="sidenav" [mode]="over" [(opened)]="opened">
     <mat-toolbar color="light">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Dashboard</a>
+      <a mat-list-item routerLink="">Dashboard</a>
+      <a mat-list-item routerLink="/client">Client</a>
       <a mat-list-item href="#">Permissions</a>
       <a mat-list-item href="#">About</a>
     </mat-nav-list>

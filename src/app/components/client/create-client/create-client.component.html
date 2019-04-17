@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-md-4 col-lg-4 mx-auto p-2">
+      <div class="border text-center">
+        <div class="client-form mt-5 mb-5">
+          <h5>Create Client</h5>
+          <div>
+            <mat-form-field>
+              <input matInput [(ngModel)]="nClient.name" placeholder="Name">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput [(ngModel)]="nClient.last_name" placeholder="Last Name">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput [(ngModel)]="nClient.email" placeholder="Email">
+            </mat-form-field>
+          </div>
+          <div>
+            <button mat-raised-button color="primary" (click)="createClient(nClient)">Create Client</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
